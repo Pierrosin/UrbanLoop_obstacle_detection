@@ -26,3 +26,24 @@ Le premier correspond à la détection d'objets par YOLO et le second correspond
 
 ### Détection d'objets par YOLO
 
+Dans un premier temps, chaque image du flux vidéo est analysée par algorithme de détection d'objets YOLOv4 qui donne le type d'objet et sa position dans l'image.
+
+Cet algorithme est associé à un modèle de réseau de neurones qui permet de détecter 80 types de labels différents (humain, animaux, objets...) mais aussi avec mon propre modèle de reconnaissance des capsules UrbanLoop entrainé sur une database d'environ 500 images.
+
+![Cover](https://github.com/Pierrosin/UrbanLoop_obstacle_detection/blob/master/UrbanLoopYolo.png)
+
+
+### Détection des rails
+
+Ensuite, l'image est analysée afin de détecter et localiser les deux rails par traitement d'images via des matrices de convolutions et des courbes de Bézier.
+
+![Cover](https://github.com/Pierrosin/UrbanLoop_obstacle_detection/blob/master/RailDetection.png)
+
+### Détection des obstacles
+
+Enfin, pour chaque image, on peut déterminer si chacun des objets détectés se situe entre les rails en fonction de sa position par rapporta aux rails.
+
+![Cover](https://github.com/Pierrosin/UrbanLoop_obstacle_detection/blob/master/UrbanLoopSafe.png)
+
+![Cover](https://github.com/Pierrosin/UrbanLoop_obstacle_detection/blob/master/UrbanLoopDanger.png)
+
