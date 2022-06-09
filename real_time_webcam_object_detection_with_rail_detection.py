@@ -399,7 +399,7 @@ def loop_webcam2(video):
 
                 score = str(
                     round(float(confidences_scores[max_class_id]) * 100, 1)) + "%"
-                text = "{}: {}".format(labels[labels_detected[max_class_id]], score)
+                text = "SAFE: {}: {}".format(labels[labels_detected[max_class_id]], score)
                 cv2.putText(valid_frame, text, (x, y - 5),
                             cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
         
