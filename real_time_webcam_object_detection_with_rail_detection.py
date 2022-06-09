@@ -249,7 +249,7 @@ def loop_webcam2(video):
                 left_points.append([left_maxindex, i + int(slide_height / 2)])
                 sliding_window[0] = max(330, left_maxindex - int(slide_width / 4 + (slide_width + 10) / (count + 1)))
                 sliding_window[1] = min(670, left_maxindex + int(slide_width / 4 + (slide_width + 10) / (count + 1)))
-                cv2.rectangle(valid_frame, (sliding_window[0], i + slide_height), (sliding_window[1], i), (0, 255, 0), 1)
+                #cv2.rectangle(valid_frame, (sliding_window[0], i + slide_height), (sliding_window[1], i), (255, 0, 0), 1)
 
             # right railroad line processing
             if right_edge.argmax() > 0:
@@ -260,7 +260,7 @@ def loop_webcam2(video):
                 right_points.append([right_maxindex, i + int(slide_height / 2)])
                 sliding_window[2] = max(330, right_maxindex - int(slide_width / 4 + (slide_width + 10) / (count + 1)))
                 sliding_window[3] = min(670, right_maxindex + int(slide_width / 4 + (slide_width + 10) / (count + 1)))
-                cv2.rectangle(valid_frame, (sliding_window[2], i + slide_height), (sliding_window[3], i), (0, 0, 255), 1)
+                #cv2.rectangle(valid_frame, (sliding_window[2], i + slide_height), (sliding_window[3], i), (255, 0, 0), 1)
             count += 1
 
         # bezier curve process
@@ -272,7 +272,7 @@ def loop_webcam2(video):
         try:
             old_point = (bezier_left_xval[0], bezier_left_yval[0])
             for point in zip(bezier_left_xval, bezier_left_yval):
-                cv2.line(valid_frame, old_point, point, (0, 0, 255), 2, cv2.LINE_AA)
+                cv2.line(valid_frame, old_point, point, (255, 0, 0), 2, cv2.LINE_AA)
                 old_point = point
                 bezier_left_points.append(point)
 
@@ -376,8 +376,8 @@ def loop_webcam2(video):
             
             print(bezier_left_points[left_point_index], bezier_right_points[right_point_index])
 
-            # find if the object is on the railway
-            if (x + w >= x_left_railway) and (x <= x_right_railway):
+            # find if the object is on the railway and is not a UrbanLoop vehicule
+            if (x + w >= x_left_railway) and (x <= x_right_railway) and labels[labels_detected[max_class_id]] != 'Capsule UrbanLoop':
                 # DANGER : the object is on the railway
 
                 # draw a DANGER bounding box rectangle and label on the image
@@ -393,8 +393,8 @@ def loop_webcam2(video):
             else:
                 # SAFE : the object is not on the railway
 
-                # draw a bounding box rectangle and label on the image
-                color = [int(c) for c in BOX_COLORS[labels_detected[max_class_id]]]
+                # draw a SAFE bounding box rectangle and label on the image
+                color = [0, 255, 0]
                 cv2.rectangle(valid_frame, (x, y), (x + w, y + h), color, 1)
 
                 score = str(
@@ -472,4 +472,4 @@ def generate_video_detection(video_name):
 #generate_video_detection('Grand Nancy _ un record du monde pour Urbanloop (online-video-cutter.com).mp4')
 #loop_webcam()
 #loop_webcam2("test_main.mp4")
-loop_webcam2("SituationUrbanLoopSafe.png")
+loop_webcam2("SituationUrbanLoopSafe2.png")
