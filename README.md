@@ -35,7 +35,7 @@ Cet algorithme est associé à un modèle de réseau de neurones qui permet de d
 
 ### Détection des rails
 
-Ensuite, l'image est analysée afin de détecter et localiser les deux rails par traitement d'images via l'utilisation de filtres d'équilibre des histogrammes, de flou et de convolutions ainsi des courbes de Bézier.
+Ensuite, l'image est analysée afin de détecter et localiser les deux rails par traitement d'images via l'utilisation de filtres d'équilibre des histogrammes, de flou et de convolution ainsi des courbes de Bézier.
 
 ![Cover](https://github.com/Pierrosin/UrbanLoop_obstacle_detection/blob/master/HistogramEqualizationFilterRail.png)
 
@@ -47,9 +47,12 @@ Ensuite, l'image est analysée afin de détecter et localiser les deux rails par
 
 ### Détection des obstacles
 
-Enfin, pour chaque image, on peut déterminer si chacun des objets détectés se situe entre les rails en fonction de sa position par rapporta aux rails.
+Enfin, pour chaque image, on peut déterminer si chacun des objets détectés se situe entre les rails en fonction de sa position par rapport aux rails.
 
 ![Cover](https://github.com/Pierrosin/UrbanLoop_obstacle_detection/blob/master/UrbanLoopSafe.png)
 
 ![Cover](https://github.com/Pierrosin/UrbanLoop_obstacle_detection/blob/master/UrbanLoopDanger.png)
 
+![Cover](https://github.com/Pierrosin/UrbanLoop_obstacle_detection/blob/master/UrbanLoopSafe2.png)
+
+![Cover](https://github.com/Pierrosin/UrbanLoop_obstacle_detection/blob/master/UrbanLoopDanger2.png)
