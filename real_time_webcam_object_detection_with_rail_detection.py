@@ -610,6 +610,6 @@ def generate_video_detection(video_name):
     
 #generate_video_detection("DémonstrationDétectionObstacleUrbanLoop.mp4")
 
-#obstacle_detection("DémonstrationDétectionObstacleUrbanLoop.mp4")
-obstacle_detection("SituationUrbanLoopSafe.png")
+#obstacle_detection("Vidéos/DémonstrationDétectionObstacleUrbanLoop.mp4")
+obstacle_detection("Photos/Photos non analysées/SituationUrbanLoopSafe.png")
 #obstacle_detection(0)
