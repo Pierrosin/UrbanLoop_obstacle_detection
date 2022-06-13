@@ -56,3 +56,5 @@ Enfin, pour chaque image, on peut déterminer si chacun des objets détectés se
 ![Cover](https://github.com/Pierrosin/UrbanLoop_obstacle_detection/blob/master/Photos/Photos%20analys%C3%A9es/UrbanLoopSafe2.png)
 
 ![Cover](https://github.com/Pierrosin/UrbanLoop_obstacle_detection/blob/master/Photos/Photos%20analys%C3%A9es/UrbanLoopDanger2.png)
+
+Une vidéo de démonstration est disponible : https://github.com/Pierrosin/UrbanLoop_obstacle_detection/blob/master/Vid%C3%A9os/D%C3%A9monstrationD%C3%A9tectionObstacleUrbanLoopAnalysed.avi
